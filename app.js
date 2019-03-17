@@ -40,6 +40,20 @@ var app = new Vue({
 						pictures: ["6.png", "2.png"],
 						character: false
 					},
+					{
+						id: 4,
+						name: "I'm a weirdo",
+						color: "#42f4b3",
+						pictures: ["3.png"],
+						character: false
+					},
+					{
+						id: 5,
+						name: "And so am I",
+						color: "#bca914",
+						pictures: ["6.png", "2.png", "5.png"],
+						character: false
+					},
 				],
 				positivity: 8,
 				information: {
@@ -79,8 +93,15 @@ var app = new Vue({
 						min_positivity: 8,
 						max_positivity: 10,
 						text: "If you love her, leave a like!"
+					},
+					{
+						id: 4,
+						min_positivity: -10,
+						max_positivity: -5,
+						text: "Fuck you!"
 					}
 				],
+				previous_background_comment_id: 0,
 				timeline: [
 					{
 						id: 1
@@ -121,8 +142,14 @@ var app = new Vue({
 					var background_comments = this.background_comments.filter(obj => {return this.positivity > obj.min_positivity && this.positivity < obj.max_positivity});
 					
 					// Take a random comment of this selection
-					var background_comment_id = random_int(0, background_comments.length-1);
-					var comment_id = background_comments[background_comment_id].id;
+					var comment_id = this.previous_background_comment_id;
+
+					while (comment_id == this.previous_background_comment_id) {
+						var background_comment_id = random_int(0, background_comments.length-1);
+						comment_id = background_comments[background_comment_id].id;
+					}
+					this.previous_background_comment_id = comment_id;
+					
 					var comment = this.background_comments.find(obj => {return obj.id === comment_id});
 					var comment_text = comment.text;
 
