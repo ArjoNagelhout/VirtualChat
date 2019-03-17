@@ -41,7 +41,7 @@ var app = new Vue({
 						character: false
 					},
 				],
-				positivity: 0,
+				positivity: 8,
 				information: {
 					title: "90K CELEBRATION - Getting drunk then dance",
 					streamer: "Vreemd persoon"
@@ -63,16 +63,19 @@ var app = new Vue({
 				comments: [],
 				background_comments: [
 					{
+						id: 1,
 						min_positivity: 3,
 						max_positivity: 8,
 						text: "OMG XD"
 					},
 					{
+						id: 2,
 						min_positivity: -10,
 						max_positivity: 10,
 						text: "Kun je een shoutout doen?"
 					},
 					{
+						id: 3,
 						min_positivity: 8,
 						max_positivity: 10,
 						text: "If you love her, leave a like!"
@@ -107,17 +110,27 @@ var app = new Vue({
 					this.choose = false;
 				},
 				add_background_comment: function() {
-					var background_commenters = this.commenters.filter(obj => {return obj.character === false})
+					// Only use commenters that are not characters
+					var background_commenters = this.commenters.filter(obj => {return obj.character === false});
 					
-					var commenter_id = random_int(0, background_commenters.length-1);
-					var commenter = background_commenters[commenter_id].id;
-					var comment_id = random_int(0, this.background_comments.length-1);
-					var comment = this.background_comments[comment_id].text;
+					// Take a random commenter of this selection
+					var background_commenter_id = random_int(0, background_commenters.length-1);
+					var commenter_id = background_commenters[background_commenter_id].id;
 
-					this.add_comment(commenter, comment);
+					// Only use comments that fit the current positivity level
+					var background_comments = this.background_comments.filter(obj => {return this.positivity > obj.min_positivity && this.positivity < obj.max_positivity});
+					
+					// Take a random comment of this selection
+					var background_comment_id = random_int(0, background_comments.length-1);
+					var comment_id = background_comments[background_comment_id].id;
+					var comment = this.background_comments.find(obj => {return obj.id === comment_id});
+					var comment_text = comment.text;
+
+					this.add_comment(commenter_id, comment_text);
 				},
 				start_interval: function() {
-					setInterval(() => {this.add_background_comment()}, 1000);
+					//setInterval(() => {this.add_background_comment()}, 1000);
+					this.add_background_comment();
 				},
 				add_comment: function(commenter_id, text) {
 
