@@ -2,23 +2,27 @@ var app = new Vue({
 			el: '#app',
 			data: {
 				video_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos",
-				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/pictures",
-				comments: [
+				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
+				commenters: [
 					{
-						name: "Een persoon", 
-						color: "#0f0", 
-						pictures: ["pictures/1.png", "pictures/3.png", "pictures/6.png"],
-						text: "Dit is een test"
+						id: 1,
+						name: "Arjo",
+						color: "#000",
+						pictures: ["1.png", "2.png"]
 					}
-				]
+				],
+				comments: []
 			},
 			methods: {
-				add_comment: function() {
+				add_comment: function(commenter_id, text) {
+
+					var commenter = this.commenters.find(obj => {return obj.id === commenter_id});
+
 					this.comments.push({
-							name: "Itz_marcos_Py", 
-							color: "#00f", 
-							picture: "picture_1.png",
-							text: "They just started playing him on the radio up here in Michigan"
+							name: commenter.name, 
+							color: commenter.color, 
+							pictures: commenter.pictures,
+							text: text
 						})
 				}
 			},
