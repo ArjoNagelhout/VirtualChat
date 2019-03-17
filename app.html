@@ -7,7 +7,11 @@
 </head>
 <body>
 	<div id="app">
-		<div id="video_area"></div>
+		<div id="video_area">
+			<video autoplay>
+				<source v-bind:src="video_path+current_video" type="video/mp4">
+			</video>
+		</div>
 		<div id="information_area"></div>
 		<div id="chat_area">
 			<button v-on:click="add_comment(1, 'Dit is een test')">Voeg comment toe</button>

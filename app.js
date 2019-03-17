@@ -1,16 +1,20 @@
 var app = new Vue({
 			el: '#app',
 			data: {
-				video_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos",
+				video_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos/",
 				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
 				commenters: [
 					{
 						id: 1,
-						name: "Arjo",
+						name: "Naam",
 						color: "#000",
 						pictures: ["1.png", "2.png"]
 					}
 				],
+				information: {
+
+				},
+				current_video: "movie_2.mp4",
 				comments: []
 			},
 			methods: {
