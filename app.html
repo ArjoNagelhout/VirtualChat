@@ -13,8 +13,8 @@
 				<source v-bind:src="video_path+current_video" type="video/mp4">
 			</video>
 			<div id="information_area">
-				<h1>90K CELEBRATION - Getting drunk then dance</h1>
-				<h2>Vreemd persoon</h2>
+				<h1>{{information.title}}</h1>
+				<h2>{{information.streamer}}</h2>
 				<h3>Positivity: {{positivity}}</h3>
 			</div>
 		</div>
@@ -39,9 +39,8 @@
 					</div>
 				</div>
 				<div v-else>
-
 					Player has to wait
-					<button v-on:click="add_comment(1, counter); counter+=1">Voeg comment toe</button>
+					<button v-on:click="start_interval">Voeg comment toe</button>
 				</div>
 			</div>
 		</div>
