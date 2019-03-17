@@ -2,14 +2,25 @@
 <html>
 <head>
 	<title>App</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 	<div id="app">
 		<div id="video_area"></div>
 		<div id="information_area"></div>
-		<div id="chat_area"></div>
+		<div id="chat_area">
+			<ul>
+				<li v-for="comment in comments">
+
+					<span class="comment_pictures" v-for="picture in comment.pictures">
+						<img v-bind:src="picture"/>
+					</span>
+					<span class="comment_name" v-bind:style="{'color': comment.color}">{{comment.name}}</span>: {{comment.text}}
+				</li>
+			</ul>
+		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
