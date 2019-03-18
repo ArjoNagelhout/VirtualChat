@@ -9,7 +9,7 @@ function random_int(min, max) {
 var app = new Vue({
 			el: '#app',
 			data: {
-				video_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos/",
+				videos_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos/",
 				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
 				commenters: [
 					{
@@ -61,17 +61,12 @@ var app = new Vue({
 					streamer: "Vreemd persoon"
 				},
 				current_video: "movie_2.mp4",
-				choose: false,
+				choose: true,
 				current_choice: [
 					{
 						id: 1,
-						text: "Saai, kutstream",
-						result: -2
-					},
-					{
-						id: 2,
-						text: "Superleuk! Ga zo door!",
-						result: 1
+						text: "Start het verhaal",
+						destination_timeline: 1
 					}
 				],
 				comments: [],
@@ -107,13 +102,18 @@ var app = new Vue({
 						id: 1,
 						events: [
 							{
-								type: "play_video",
-								duration: 1000,
-								video: "movie_2.mp4"
+								type: "set_positivity",
+								duration: 0,
+								value: 10
+							},
+							{
+								type: "change_video",
+								duration: 2000,
+								video: "movie_1.mp4"
 							},
 							{
 								type: "post_comment",
-								duration: 500,
+								duration: 4000,
 								comment: {
 									commenter_id: 1, 
 									text: "test"
@@ -125,12 +125,12 @@ var app = new Vue({
 									{
 										id: 1,
 										text: "Saai, kutstream",
-										destination: 1
+										destination_timeline: 1
 									},
 									{
 										id: 2,
 										text: "Superleuk! Ga zo door!",
-										destination: 2
+										destination_timeline: 2
 									}
 								]
 							}
@@ -149,8 +149,9 @@ var app = new Vue({
 
 					// Execute different types of events
 					switch (event.type) {
-						case "play_video":
+						case "change_video":
 						this.current_video = event.video;
+						video_element.load();
 						break;
 
 						case "post_comment":
@@ -161,6 +162,10 @@ var app = new Vue({
 						case "present_choice":
 						this.current_choice = event.choice;
 						this.choose = true;
+						break;
+
+						case "set_positivity":
+						this.positivity = event.value;
 						break;
 					}
 
@@ -176,9 +181,10 @@ var app = new Vue({
 					var choice = this.current_choice.find(obj => {return obj.id === choice_id});
 
 					this.add_comment(0, choice.text);
-
-					this.positivity += choice.result;
 					this.choose = false;
+
+					this.current_timeline_id = choice.destination_timeline;
+					this.execute_event(0);
 				},
 				add_background_comment: function() {
 					// Only use commenters that are not characters
