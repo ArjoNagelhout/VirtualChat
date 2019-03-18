@@ -61,7 +61,7 @@ var app = new Vue({
 					streamer: "Vreemd persoon"
 				},
 				current_video: "movie_2.mp4",
-				choose: true,
+				choose: false,
 				current_choice: [
 					{
 						id: 1,
@@ -104,23 +104,73 @@ var app = new Vue({
 				previous_background_comment_id: 0,
 				timeline: [
 					{
-						id: 1
-					},
-					{
-						id: 2
-					},
-					{
-						id: 3
+						id: 1,
+						events: [
+							{
+								type: "play_video",
+								duration: 1000,
+								video: "movie_2.mp4"
+							},
+							{
+								type: "post_comment",
+								duration: 500,
+								comment: {
+									commenter_id: 1, 
+									text: "test"
+								}
+							},
+							{
+								type: "present_choice",
+								choice: [
+									{
+										id: 1,
+										text: "Saai, kutstream",
+										destination: 1
+									},
+									{
+										id: 2,
+										text: "Superleuk! Ga zo door!",
+										destination: 2
+									}
+								]
+							}
+
+						]
 					}
 				],
+				current_timeline_id: 1,
 				counter: 0
 			},
+			
 			methods: {
-				create_player_choice: function(choice) {
+				execute_event: function(event_id) {
+					var current_timeline = this.timeline.find(obj => {return obj.id === this.current_timeline_id});
+					var event = current_timeline.events[event_id];
 
-					this.current_choice = choice;
+					// Execute different types of events
+					switch (event.type) {
+						case "play_video":
+						this.current_video = event.video;
+						break;
 
-					this.choose = true;
+						case "post_comment":
+						var comment = event.comment;
+						this.add_comment(comment.commenter_id, comment.text);
+						break;
+
+						case "present_choice":
+						this.current_choice = event.choice;
+						this.choose = true;
+						break;
+					}
+
+
+					// Check if all events have been executed
+					if (event_id < current_timeline.events.length-1) {
+						var new_event_id = event_id + 1;
+						var event_duration = event.duration;
+						setTimeout(()=>{this.execute_event(new_event_id)}, event_duration);
+					}
 				},
 				player_choose: function(choice_id) {
 					var choice = this.current_choice.find(obj => {return obj.id === choice_id});
@@ -143,21 +193,25 @@ var app = new Vue({
 					
 					// Take a random comment of this selection
 					var comment_id = this.previous_background_comment_id;
-
-					while (comment_id == this.previous_background_comment_id) {
+					
+					function generate_comment_id() {
 						var background_comment_id = random_int(0, background_comments.length-1);
 						comment_id = background_comments[background_comment_id].id;
 					}
+					if (background_comments.length > 1) {
+						while (comment_id == this.previous_background_comment_id) {
+							generate_comment_id();
+						}
+					} else {
+						generate_comment_id();
+					}
+					
 					this.previous_background_comment_id = comment_id;
 					
 					var comment = this.background_comments.find(obj => {return obj.id === comment_id});
 					var comment_text = comment.text;
 
 					this.add_comment(commenter_id, comment_text);
-				},
-				start_interval: function() {
-					//setInterval(() => {this.add_background_comment()}, 1000);
-					this.add_background_comment();
 				},
 				add_comment: function(commenter_id, text) {
 
@@ -174,9 +228,6 @@ var app = new Vue({
   						chat.scrollTop = chat.scrollHeight;
   					})
 				}
-				
-			},
-			computed: {
 				
 			}
 		})
