@@ -1,0 +1,131 @@
+{
+	"information": {
+		"title": "90K CELEBRATION - Getting drunk then dance",
+		"streamer": "Vreemd persoon"
+	},
+	"start_choice": [
+		{
+			"id": 1,
+			"text": "Start het verhaal",
+			"destination_timeline": 1
+		}
+	],
+	"start_video": "movie_2.mp4",
+	"commenters": [
+		{
+			"id": 0,
+			"name": "Reserved for player",
+			"color": "#050",
+			"pictures": ["6.png"],
+			"character": true
+		},
+		{
+			"id": 1,
+			"name": "Slecht persoon",
+			"color": "#000",
+			"pictures": ["1.png", "2.png"],
+			"character": true
+		},
+		{
+			"id": 2,
+			"name": "Random person",
+			"color": "#f33",
+			"pictures": ["5.png", "7.png"],
+			"character": false
+		},
+		{
+			"id": 3,
+			"name": "Ander random person",
+			"color": "#b934db",
+			"pictures": ["6.png", "2.png"],
+			"character": false
+		},
+		{
+			"id": 4,
+			"name": "I'm a weirdo",
+			"color": "#42f4b3",
+			"pictures": ["3.png"],
+			"character": false
+		},
+		{
+			"id": 5,
+			"name": "And so am I",
+			"color": "#bca914",
+			"pictures": ["6.png", "2.png", "5.png"],
+			"character": false
+		}
+	],
+	"background_comments": [
+		{
+			"id": 1,
+			"min_positivity": 3,
+			"max_positivity": 8,
+			"text": "OMG XD"
+		},
+		{
+			"id": 2,
+			"min_positivity": -10,
+			"max_positivity": 10,
+			"text": "Kun je een shoutout doen?"
+		},
+		{
+			"id": 3,
+			"min_positivity": 8,
+			"max_positivity": 10,
+			"text": "If you love her, leave a like!"
+		},
+		{
+			"id": 4,
+			"min_positivity": -10,
+			"max_positivity": -5,
+			"text": "Fuck you!"
+		},
+		{
+			"id": 5,
+			"min_positivity": 0,
+			"max_positivity": 3,
+			"text": "Test"
+		}
+	],
+	"timeline": [
+		{
+			"id": 1,
+			"events": [
+				{
+					"type": "set_positivity",
+					"duration": 0,
+					"value": 10
+				},
+				{
+					"type": "change_video",
+					"duration": 2000,
+					"video": "movie_1.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 4000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "test"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Saai, kutstream",
+							"destination_timeline": 1
+						},
+						{
+							"id": 2,
+							"text": "Superleuk! Ga zo door!",
+							"destination_timeline": 2
+						}
+					]
+				}
+			]
+		}
+	]
+}

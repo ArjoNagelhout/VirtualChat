@@ -11,137 +11,32 @@ var app = new Vue({
 			data: {
 				videos_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos/",
 				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
-				commenters: [
-					{
-						id: 0,
-						name: "Reserved for player",
-						color: "#050",
-						pictures: ["6.png"],
-						character: true
-					},
-					{
-						id: 1,
-						name: "Slecht persoon",
-						color: "#000",
-						pictures: ["1.png", "2.png"],
-						character: true
-					},
-					{
-						id: 2,
-						name: "Random person",
-						color: "#f33",
-						pictures: ["5.png", "7.png"],
-						character: false
-					},
-					{
-						id: 3,
-						name: "Ander random person",
-						color: "#b934db",
-						pictures: ["6.png", "2.png"],
-						character: false
-					},
-					{
-						id: 4,
-						name: "I'm a weirdo",
-						color: "#42f4b3",
-						pictures: ["3.png"],
-						character: false
-					},
-					{
-						id: 5,
-						name: "And so am I",
-						color: "#bca914",
-						pictures: ["6.png", "2.png", "5.png"],
-						character: false
-					},
-				],
-				positivity: 8,
-				information: {
-					title: "90K CELEBRATION - Getting drunk then dance",
-					streamer: "Vreemd persoon"
-				},
-				current_video: "movie_2.mp4",
+				commenters: [],
+				positivity: 0,
+				information: {},
+				current_video: null,
 				choose: true,
-				current_choice: [
-					{
-						id: 1,
-						text: "Start het verhaal",
-						destination_timeline: 1
-					}
-				],
+				current_choice: [],
 				comments: [],
-				background_comments: [
-					{
-						id: 1,
-						min_positivity: 3,
-						max_positivity: 8,
-						text: "OMG XD"
-					},
-					{
-						id: 2,
-						min_positivity: -10,
-						max_positivity: 10,
-						text: "Kun je een shoutout doen?"
-					},
-					{
-						id: 3,
-						min_positivity: 8,
-						max_positivity: 10,
-						text: "If you love her, leave a like!"
-					},
-					{
-						id: 4,
-						min_positivity: -10,
-						max_positivity: -5,
-						text: "Fuck you!"
-					}
-				],
+				background_comments: [],
 				previous_background_comment_id: 0,
-				timeline: [
-					{
-						id: 1,
-						events: [
-							{
-								type: "set_positivity",
-								duration: 0,
-								value: 10
-							},
-							{
-								type: "change_video",
-								duration: 2000,
-								video: "movie_1.mp4"
-							},
-							{
-								type: "post_comment",
-								duration: 4000,
-								comment: {
-									commenter_id: 1, 
-									text: "test"
-								}
-							},
-							{
-								type: "present_choice",
-								choice: [
-									{
-										id: 1,
-										text: "Saai, kutstream",
-										destination_timeline: 1
-									},
-									{
-										id: 2,
-										text: "Superleuk! Ga zo door!",
-										destination_timeline: 2
-									}
-								]
-							}
-
-						]
-					}
-				],
-				current_timeline_id: 1,
+				timeline: [],
+				current_timeline_id: 0,
 				counter: 0
 			},
-			
+			created: function() {
+				fetch("data.json")
+					.then(r => r.json())
+					.then(json => {
+						this.background_comments = json.background_comments;
+						this.commenters = json.commenters;
+						this.timeline = json.timeline;
+						this.current_choice = json.start_choice;
+						this.current_video = json.start_video;
+						this.information = json.information;
+					});
+
+			},
 			methods: {
 				execute_event: function(event_id) {
 					var current_timeline = this.timeline.find(obj => {return obj.id === this.current_timeline_id});
@@ -151,6 +46,7 @@ var app = new Vue({
 					switch (event.type) {
 						case "change_video":
 						this.current_video = event.video;
+						this.change_video_loop(event.loop);
 						video_element.load();
 						break;
 
@@ -175,6 +71,13 @@ var app = new Vue({
 						var new_event_id = event_id + 1;
 						var event_duration = event.duration;
 						setTimeout(()=>{this.execute_event(new_event_id)}, event_duration);
+					}
+				},
+				change_video_loop: function(bool) {
+					if (bool == "true") {
+						video_element.setAttribute("loop", "true");
+					} else {
+						video_element.removeAttribute("loop");
 					}
 				},
 				player_choose: function(choice_id) {
