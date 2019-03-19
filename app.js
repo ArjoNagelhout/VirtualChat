@@ -13,6 +13,8 @@ var app = new Vue({
 				pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
 				commenters: [],
 				positivity: 0,
+				background_comment_frequency: {min: 1000, max: 1000},
+				background_comments_bool: false,
 				information: {},
 				current_video: null,
 				choose: true,
@@ -24,7 +26,8 @@ var app = new Vue({
 				current_timeline_id: 0,
 				counter: 0
 			},
-			created: function() {
+			created: function() { 
+				// Load data from json file
 				fetch("data.json")
 					.then(r => r.json())
 					.then(json => {
@@ -36,6 +39,8 @@ var app = new Vue({
 						this.information = json.information;
 					});
 
+				this.add_background_comment();
+				video_element.load();
 			},
 			methods: {
 				execute_event: function(event_id) {
@@ -44,10 +49,19 @@ var app = new Vue({
 
 					// Execute different types of events
 					switch (event.type) {
-						case "change_video":
+						case "set_video":
 						this.current_video = event.video;
 						this.change_video_loop(event.loop);
 						video_element.load();
+						break;
+
+						case "set_background_comment_frequency":
+						this.background_comment_frequency.min = event.min;
+						this.background_comment_frequency.max = event.max;
+						break;
+
+						case "set_background_comments":
+						this.background_comments_bool = event.value;
 						break;
 
 						case "post_comment":
@@ -90,7 +104,14 @@ var app = new Vue({
 					this.execute_event(0);
 				},
 				add_background_comment: function() {
-					// Only use commenters that are not characters
+
+					var comment_delay = random_int(this.background_comment_frequency.min, this.background_comment_frequency.max);
+					setTimeout(()=>{this.add_background_comment()}, comment_delay);
+					if (this.background_comments_bool == false) {
+						return;
+					}
+
+					// Only use commenters that are not story characters
 					var background_commenters = this.commenters.filter(obj => {return obj.character === false});
 					
 					// Take a random commenter of this selection
@@ -98,20 +119,22 @@ var app = new Vue({
 					var commenter_id = background_commenters[background_commenter_id].id;
 
 					// Only use comments that fit the current positivity level
-					var background_comments = this.background_comments.filter(obj => {return this.positivity > obj.min_positivity && this.positivity < obj.max_positivity});
-					
+					var background_comments = this.background_comments.filter(obj => {return this.positivity >= obj.min_positivity && this.positivity <= obj.max_positivity});
+
 					// Take a random comment of this selection
 					var comment_id = this.previous_background_comment_id;
-					
+
 					function generate_comment_id() {
 						var background_comment_id = random_int(0, background_comments.length-1);
 						comment_id = background_comments[background_comment_id].id;
 					}
 					if (background_comments.length > 1) {
+						// Generate comment different than the one that was just posted
 						while (comment_id == this.previous_background_comment_id) {
 							generate_comment_id();
 						}
 					} else {
+						// Only one comment fits the criteria
 						generate_comment_id();
 					}
 					
@@ -121,6 +144,9 @@ var app = new Vue({
 					var comment_text = comment.text;
 
 					this.add_comment(commenter_id, comment_text);
+
+					
+					
 				},
 				add_comment: function(commenter_id, text) {
 
@@ -133,9 +159,11 @@ var app = new Vue({
 						text: text
 					});
 
-					this.$nextTick(() => {
-  						chat.scrollTop = chat.scrollHeight;
-  					})
+					if (chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight)) {
+						this.$nextTick(() => {
+	  						chat.scrollTop = chat.scrollHeight;
+	  					});
+					}
 				}
 				
 			}

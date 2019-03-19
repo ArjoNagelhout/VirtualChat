@@ -70,7 +70,7 @@
 		},
 		{
 			"id": 3,
-			"min_positivity": 8,
+			"min_positivity": -10,
 			"max_positivity": 10,
 			"text": "If you love her, leave a like!"
 		},
@@ -94,12 +94,23 @@
 				{
 					"type": "set_positivity",
 					"duration": 0,
-					"value": 10
+					"value": 9
 				},
 				{
-					"type": "change_video",
+					"type": "set_background_comments",
+					"duration": 0,
+					"value": true
+				},
+				{
+					"type": "set_background_comment_frequency",
+					"duration": 0,
+					"min": 100,
+					"max": 2000
+				},
+				{
+					"type": "set_video",
 					"duration": 2000,
-					"video": "movie_1.mp4",
+					"video": "movie_2.mp4",
 					"loop": "false"
 				},
 				{
