@@ -24,7 +24,8 @@ var app = new Vue({
 				previous_background_comment_id: 0,
 				timeline: [],
 				current_timeline_id: 0,
-				counter: 0
+				counter: 0,
+				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000}
 			},
 			created: function() { 
 				// Load data from json file
@@ -40,9 +41,19 @@ var app = new Vue({
 					});
 
 				this.add_background_comment();
-				video_element.load();
+				this.update_viewcount();
 			},
 			methods: {
+				update_viewcount: function() {
+					var f = this.viewcount.fluctuation/2;
+					var c = this.viewcount.value+random_int(-f, f);
+					if (c < 0) {
+						c = 0;
+					}
+					this.viewcount.real = c;
+
+					setTimeout(()=>{this.update_viewcount()}, this.viewcount.update_delay);
+				},
 				execute_event: function(event_id) {
 					var current_timeline = this.timeline.find(obj => {return obj.id === this.current_timeline_id});
 					var event = current_timeline.events[event_id];
@@ -76,6 +87,11 @@ var app = new Vue({
 
 						case "set_positivity":
 						this.positivity = event.value;
+						break;
+
+						case "set_viewcount":
+						this.viewcount.value = event.value;
+						this.viewcount.fluctuation = event.fluctuation;
 						break;
 					}
 
