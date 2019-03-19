@@ -38,6 +38,8 @@ var app = new Vue({
 						this.current_choice = json.start_choice;
 						this.current_video = json.start_video;
 						this.information = json.information;
+
+						video_element.load();
 					});
 
 				this.add_background_comment();
