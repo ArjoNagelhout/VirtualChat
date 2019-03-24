@@ -1,7 +1,8 @@
 {
 	"information": {
-		"title": "90K CELEBRATION - Getting drunk then dance",
-		"streamer": "Vreemd persoon"
+		"title": "Dobbelstenen review! #129",
+		"streamer": "MerchanDice",
+		"description": "Dit is mijn geweldige stream over een ding. "
 	},
 	"start_choice": [
 		{
@@ -42,7 +43,7 @@
 		},
 		{
 			"id": 4,
-			"name": "I'm a weirdo",
+			"name": "I'm a person",
 			"color": "#42f4b3",
 			"pictures": ["3.png"],
 			"character": false
@@ -128,17 +129,26 @@
 					"fluctuation": 100
 				},
 				{
+					"type": "turn_camera",
+					"duration": 1000
+				},
+				{
 					"type": "present_choice",
 					"choice": [
 						{
 							"id": 1,
-							"text": "Saai, kutstream",
+							"text": "Dit is een hele lange keuze maar dat zou toch ook moeten kunnen en daarom stop ik deze er toch bij om het te kunnen testen en zo is dat hier komt. Nog wat extra tekst. Ik ben hier blij mee. ",
 							"destination_timeline": 1
 						},
 						{
 							"id": 2,
 							"text": "Superleuk! Ga zo door!",
 							"destination_timeline": 2
+						},
+						{
+							"id": 3,
+							"text": "Help, er is een extra keuze bijgekomen",
+							"destination_timeline": 1
 						}
 					]
 				}

@@ -25,7 +25,10 @@ var app = new Vue({
 				timeline: [],
 				current_timeline_id: 0,
 				counter: 0,
-				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000}
+				turnt_camera: false,
+				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
+
+				debug:false
 			},
 			created: function() { 
 				// Load data from json file
@@ -44,8 +47,21 @@ var app = new Vue({
 
 				this.add_background_comment();
 				this.update_viewcount();
+				this.create_camera();
+
+
+
 			},
 			methods: {
+				create_camera: function() {
+					if (navigator.mediaDevices.getUserMedia) {
+						
+						navigator.mediaDevices.getUserMedia({ video: true })
+							.then(function (stream) {
+								this.video_stream_element.srcObject = stream;
+							})
+					}
+				},
 				update_viewcount: function() {
 					var f = this.viewcount.fluctuation/2;
 					var c = this.viewcount.value+random_int(-f, f);
@@ -95,6 +111,10 @@ var app = new Vue({
 						this.viewcount.value = event.value;
 						this.viewcount.fluctuation = event.fluctuation;
 						break;
+
+						case "turn_camera":
+						this.turnt_camera = true;
+						break;
 					}
 
 
@@ -119,6 +139,11 @@ var app = new Vue({
 					this.choose = false;
 
 					this.current_timeline_id = choice.destination_timeline;
+
+					this.$nextTick(() => {
+  						chat.scrollTop = chat.scrollHeight;
+  					});
+					
 					this.execute_event(0);
 				},
 				add_background_comment: function() {
@@ -141,7 +166,7 @@ var app = new Vue({
 
 					// Take a random comment of this selection
 					var comment_id = this.previous_background_comment_id;
-
+					
 					function generate_comment_id() {
 						var background_comment_id = random_int(0, background_comments.length-1);
 						comment_id = background_comments[background_comment_id].id;
