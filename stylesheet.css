@@ -131,8 +131,9 @@ video {
 
 #player_choice {
 	flex-shrink:0;
-	flex-grow:1;
-	min-height:200px;
+	flex-grow:0;
+
+	flex-basis:200px;
 	border-top:5px solid #e0125d;
 	padding:20px;
 }
@@ -141,6 +142,13 @@ video {
 #choices_container {
 	display:flex;
 	flex-direction:column;
+}
+
+#choice_title {
+	font-family:'Raleway', sans-serif;
+	-webkit-margin-before:0;
+	-webkit-margin-after:0;
+	margin-bottom:10px;
 }
 
 .choice_container {
@@ -160,7 +168,8 @@ video {
 }
 
 .comment {
-	height:100px;
+	margin-top:10px;
+	margin-bottom:10px;
 	flex-grow:0;
 	flex-shrink:0;
 }

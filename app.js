@@ -99,7 +99,15 @@ var app = new Vue({
 						break;
 
 						case "present_choice":
+						if (chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight)) {
+							this.$nextTick(() => {
+								this.$nextTick(() => {
+									chat.scrollTop = chat.scrollHeight;
+								});
+							});
+						}
 						this.current_choice = event.choice;
+
 						this.choose = true;
 						break;
 
@@ -143,7 +151,7 @@ var app = new Vue({
 					this.$nextTick(() => {
   						chat.scrollTop = chat.scrollHeight;
   					});
-					
+
 					this.execute_event(0);
 				},
 				add_background_comment: function() {

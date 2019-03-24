@@ -68,15 +68,12 @@
 
 				<div id="player_choice">
 					<div id="choices_container" v-if="choose">
-						Maak een keuze:
+						<h2 id="choice_title">Maak een keuze:</h2>
 						<div class="choice_container" v-for="choice in current_choice">
 							<button class="choice_button" v-on:click="player_choose(choice.id)">
 								{{choice.text}}
 							</button>
 						</div>
-					</div>
-					<div v-else>
-						Player has to wait
 					</div>
 				</div>
 
