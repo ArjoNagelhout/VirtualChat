@@ -1,58 +1,72 @@
 {
 	"information": {
 		"title": "Dobbelstenen review! #129",
-		"streamer": "MerchanDice",
+		"streamer": "StellaStellar42",
 		"description": "Dit is mijn geweldige stream over een ding. "
 	},
 	"start_choice": [
 		{
 			"id": 1,
 			"text": "Start het verhaal",
-			"destination_timeline": 1
+			"destination_timeline": 6
 		}
 	],
 	"start_video": "movie_2.mp4",
 	"commenters": [
 		{
 			"id": 0,
-			"name": "Reserved for player",
-			"color": "#050",
-			"pictures": ["6.png"],
+			"name": "Speler",
+			"color": "#000",
+			"pictures": ["1.png"],
 			"character": true
 		},
 		{
 			"id": 1,
-			"name": "Slecht persoon",
-			"color": "#000",
-			"pictures": ["1.png", "2.png"],
+			"name": "Pussyslayer69",
+			"color": "#f00",
+			"pictures": ["2.png"],
 			"character": true
 		},
 		{
 			"id": 2,
-			"name": "Random person",
-			"color": "#f33",
-			"pictures": ["5.png", "7.png"],
-			"character": false
+			"name": "IsThAtAjOjoRefErenCe",
+			"color": "#00f",
+			"pictures": ["3.png"],
+			"character": true
 		},
 		{
 			"id": 3,
-			"name": "Ander random person",
-			"color": "#b934db",
-			"pictures": ["6.png", "2.png"],
-			"character": false
+			"name": "SuzzBae",
+			"color": "#0ff",
+			"pictures": ["4.png"],
+			"character": true
 		},
 		{
 			"id": 4,
-			"name": "I'm a person",
-			"color": "#42f4b3",
-			"pictures": ["3.png"],
-			"character": false
+			"name": "dejavuivebeeninthisplacebeforehigheronthestreetandiknowitsmytimetogo",
+			"color": "#f0f",
+			"pictures": ["5.png"],
+			"character": true
 		},
 		{
 			"id": 5,
-			"name": "And so am I",
-			"color": "#bca914",
-			"pictures": ["6.png", "2.png", "5.png"],
+			"name": "Themanwithaplan001",
+			"color": "#0ff",
+			"pictures": ["6.png"],
+			"character": true
+		},
+		{
+			"id": 6,
+			"name": "BallBuster**",
+			"color": "#8b0",
+			"pictures": ["7.png"],
+			"character": true
+		},
+		{
+			"id": 7,
+			"name": "random_commenter",
+			"color": "#ff0",
+			"pictures": [],
 			"character": false
 		}
 	],
@@ -93,64 +107,340 @@
 			"id": 1,
 			"events": [
 				{
-					"type": "set_positivity",
-					"duration": 0,
-					"value": 9
-				},
-				{
-					"type": "set_background_comments",
-					"duration": 0,
-					"value": true
-				},
-				{
-					"type": "set_background_comment_frequency",
-					"duration": 0,
-					"min": 1000,
-					"max": 2000
-				},
-				{
 					"type": "set_video",
 					"duration": 2000,
-					"video": "movie_2.mp4",
+					"video": "video_1.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 4000,
+					"duration": 2000,
 					"comment": {
 						"commenter_id": 1, 
-						"text": "test"
+						"text": "Sup BitchBabies >:)"
 					}
 				},
 				{
-					"type": "set_viewcount",
-					"duration": 0,
-					"value": 2000,
-					"fluctuation": 100
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 2, 
+						"text": "Hallo allemaal! That’s going on here?"
+					}
 				},
 				{
-					"type": "turn_camera",
-					"duration": 1000
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Mhaaaahahaahaaaa!"
+					}
 				},
 				{
 					"type": "present_choice",
 					"choice": [
 						{
 							"id": 1,
-							"text": "Dit is een hele lange keuze maar dat zou toch ook moeten kunnen en daarom stop ik deze er toch bij om het te kunnen testen en zo is dat hier komt. Nog wat extra tekst. Ik ben hier blij mee. ",
-							"destination_timeline": 1
+							"text": "Fuck you Pussyslayer I’m not a bitchbaby ):<",
+							"destination_timeline": 1001
 						},
 						{
 							"id": 2,
-							"text": "Superleuk! Ga zo door!",
-							"destination_timeline": 2
+							"text": "Hey there everyone! :D",
+							"destination_timeline": 1002
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 1001,
+			"events": [
+				{
+					"type": "wait",
+					"duration": 2000
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Fuck! XD"
+					}
+				},
+				{
+					"type": "go_to_timeline",
+					"duration": 0,
+					"destination_timeline": 2
+				}
+			]
+		},
+		{
+			"id": 1002,
+			"events": [
+				{
+					"type": "wait",
+					"duration": 2000
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 2, 
+						"text": "Heyhey!"
+					}
+				},
+				{
+					"type": "go_to_timeline",
+					"duration": 0,
+					"destination_timeline": 2
+				}
+			]
+		},
+		{
+			"id": 2,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_2.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Fuuuuuuuuuuuuuuuck dit is SAAAAAAAAAAIII!"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 3, 
+						"text": "Like OMG dit is echt ZO onprofessioneel like wat doe je met deze stream?"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 3, 
+						"text": "Sommige mensen vinden zichzelf echt heel wat LOL"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 4, 
+						"text": "Haha ja :)"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Zeg...Wanneer wordt het interessant?",
+							"destination_timeline": 3
 						},
 						{
-							"id": 3,
-							"text": "Help, er is een extra keuze bijgekomen",
+							"id": 2,
+							"text": "Ik vind het eigenlijk wel cool",
 							"destination_timeline": 1
 						}
 					]
+				}
+			]
+		},
+		{
+			"id": 3,
+			"events": [
+				{
+					"type": "wait",
+					"duration": 2000
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Hahaha Hell Yeah Broer!"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Man! Als ik eerder had geweten dat je in was for wat fun! Man deze stream hadden we al lang over kunnen nemen XD"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 5, 
+						"text": "Hoor ik hier sprake van een kleine rebellie?"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 6, 
+						"text": "( ͡° ͜ʖ ͡°) ??"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Dit is onze stream nu! XD",
+							"destination_timeline": 4
+						},
+						{
+							"id": 2,
+							"text": "Ho ho ho vriend. Dat is niet wat ik bedoel.",
+							"destination_timeline": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 4,
+			"events": [
+				{
+					"type": "wait",
+					"duration": 2000
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "Fock Yeah XD"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 5,
+						"text": "Mooi kapen de boel! Deze stream is van ons!"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 6,
+						"text": "✊✊✊✊✊✊!"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Fuck Yeah man! XD",
+							"destination_timeline": 5
+						},
+						{
+							"id": 2,
+							"text": "Ho ho ho vriend. Dat is niet wat ik bedoel.",
+							"destination_timeline": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 5,
+			"events": [
+				{
+					"type": "wait",
+					"duration": 2000
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "haha Hey! @StellaSteller Steek die dobbelsteen maar in je reet! XD"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Hey @Pussyslayer69 Goeie man! lol",
+							"destination_timeline": 6
+						},
+						{
+							"id": 2,
+							"text": "@Pussyslayer69 Nee..gewoon niet. Doe ff normaal.",
+							"destination_timeline": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 6,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_7.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "Eeey! Laat het maar aan mij over. ;)"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Doe die stropdas maar lekker strak zodat je stikt XD",
+							"destination_timeline": 7
+						},
+						{
+							"id": 2,
+							"text": "Ik denk dat het zo wel genoeg is geweest.",
+							"destination_timeline": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 7,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_9.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "OMG wat heb je gedaan!"
+					}
 				}
 			]
 		}

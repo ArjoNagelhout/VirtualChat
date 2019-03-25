@@ -59,6 +59,14 @@ video {
 	position:relative;
 }
 
+#top_information_container {
+	display:flex;
+}
+
+#information_container {
+	flex-grow:1;
+}
+
 #information_streamer {
 	font-family:'Raleway', sans-serif;
 	-webkit-margin-before:0;
@@ -70,16 +78,12 @@ video {
 }
 
 #button_container {
-	position:absolute;
-	right:0;
-	top:0;
 	display:flex;
 }
 
 .button {
 	background-color:#e0125d;
-	margin:20px 20px 20px 0px;
-	
+	margin-left:20px;
 	width:175px;
 	height:50px;
 	display:flex;
@@ -124,6 +128,7 @@ video {
 #chat {
 	flex-grow:3;
 	overflow-y:scroll;
+	overflow-x:hidden;
 	display:flex;
 	flex-direction:column;
 	padding:20px;

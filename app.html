@@ -27,9 +27,19 @@
 					<source v-bind:src="videos_path+current_video" type="video/mp4">
 				</video>
 				<div id="information_area">
-					<h1>{{information.title}}</h1>
-					<h2 id="information_streamer">door <span>{{information.streamer}}<span></h2>
-					<h2 id="information_viewcount">{{viewcount.real}} kijkers</h2>
+					<div id="top_information_container">
+						<div id="information_container">
+							<h1>{{information.title}}</h1>
+							<h2 id="information_streamer">door <span>{{information.streamer}}</span></h2>
+							<h2 id="information_viewcount">{{viewcount.real}} kijkers</h2>
+						</div>
+					
+						<div id="button_container">
+							<div class="button"><p>Subscribe</p></div>
+							<div class="button"><p>Like</p></div>
+						</div>
+					</div>
+
 					<p v-if="debug">
 						positivity: {{positivity}}<br>
 						current_timeline_id: {{current_timeline_id}}<br>
@@ -40,10 +50,6 @@
 					<p v-else>
 						{{information.description}}
 					</p>
-					<div id="button_container">
-						<div class="button"><p>Subscribe</p></div>
-						<div class="button"><p>Like</p></div>
-					</div>
 				</div>
 			</div>
 

@@ -28,7 +28,7 @@ var app = new Vue({
 				turnt_camera: false,
 				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
 
-				debug:false
+				debug:true
 			},
 			created: function() { 
 				// Load data from json file
@@ -78,6 +78,16 @@ var app = new Vue({
 
 					// Execute different types of events
 					switch (event.type) {
+
+						case "wait":
+						break;
+
+
+						case "go_to_timeline":
+						this.current_timeline_id = event.destination_timeline;
+						this.execute_event(0);
+						break;
+
 						case "set_video":
 						this.current_video = event.video;
 						this.change_video_loop(event.loop);
@@ -99,6 +109,7 @@ var app = new Vue({
 						break;
 
 						case "present_choice":
+						// Don't ever do this. This is a quick fix
 						if (chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight)) {
 							this.$nextTick(() => {
 								this.$nextTick(() => {
@@ -107,7 +118,6 @@ var app = new Vue({
 							});
 						}
 						this.current_choice = event.choice;
-
 						this.choose = true;
 						break;
 
@@ -194,8 +204,10 @@ var app = new Vue({
 					var comment = this.background_comments.find(obj => {return obj.id === comment_id});
 					var comment_text = comment.text;
 
-					this.add_comment(commenter_id, comment_text);
-
+					// Don't post random comments when the player has to choose
+					if (this.choose == false) {
+						this.add_comment(commenter_id, comment_text);
+					}
 					
 					
 				},
