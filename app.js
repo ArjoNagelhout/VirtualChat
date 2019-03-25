@@ -6,6 +6,8 @@ function random_int(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+
+
 var app = new Vue({
 			el: '#app',
 			data: {
@@ -25,10 +27,10 @@ var app = new Vue({
 				timeline: [],
 				current_timeline_id: 0,
 				counter: 0,
-				turnt_camera: false,
+				turnt_camera: true,
 				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
 
-				debug:true
+				debug:false
 			},
 			created: function() { 
 				// Load data from json file
@@ -45,11 +47,16 @@ var app = new Vue({
 						video_element.load();
 					});
 
+
+				window.addEventListener("resize", function(e) {
+					this.video_stream_element.height = this.video_stream_element.offsetWidth * (1080/1920);
+				});
+
+
+
 				this.add_background_comment();
 				this.update_viewcount();
 				this.create_camera();
-
-
 
 			},
 			methods: {
@@ -59,6 +66,7 @@ var app = new Vue({
 						navigator.mediaDevices.getUserMedia({ video: true })
 							.then(function (stream) {
 								this.video_stream_element.srcObject = stream;
+								this.video_stream_element.height = this.video_stream_element.offsetWidth * (1080/1920);
 							})
 					}
 				},
@@ -81,7 +89,6 @@ var app = new Vue({
 
 						case "wait":
 						break;
-
 
 						case "go_to_timeline":
 						this.current_timeline_id = event.destination_timeline;

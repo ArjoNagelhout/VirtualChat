@@ -8,7 +8,7 @@
 		{
 			"id": 1,
 			"text": "Start het verhaal",
-			"destination_timeline": 6
+			"destination_timeline": 1
 		}
 	],
 	"start_video": "movie_2.mp4",
@@ -169,6 +169,12 @@
 					}
 				},
 				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_3.mp4",
+					"loop": "false"
+				},
+				{
 					"type": "go_to_timeline",
 					"duration": 0,
 					"destination_timeline": 2
@@ -191,6 +197,12 @@
 					}
 				},
 				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_2.mp4",
+					"loop": "false"
+				},
+				{
 					"type": "go_to_timeline",
 					"duration": 0,
 					"destination_timeline": 2
@@ -200,12 +212,6 @@
 		{
 			"id": 2,
 			"events": [
-				{
-					"type": "set_video",
-					"duration": 2000,
-					"video": "video_2.mp4",
-					"loop": "false"
-				},
 				{
 					"type": "post_comment",
 					"duration": 2000,
@@ -347,12 +353,12 @@
 					"choice": [
 						{
 							"id": 1,
-							"text": "Fuck Yeah man! XD",
+							"text": "Laat de bitch maar kletsen over dobbelstenen. Er luistert toch niemand.",
 							"destination_timeline": 5
 						},
 						{
 							"id": 2,
-							"text": "Ho ho ho vriend. Dat is niet wat ik bedoel.",
+							"text": "Ik heb heb me bedacht broeders. Laten we het er maar bij laten.",
 							"destination_timeline": 1
 						}
 					]
@@ -363,8 +369,10 @@
 			"id": 5,
 			"events": [
 				{
-					"type": "wait",
-					"duration": 2000
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_5.mp4",
+					"loop": "false"
 				},
 				{
 					"type": "post_comment",
@@ -432,6 +440,40 @@
 					"type": "set_video",
 					"duration": 2000,
 					"video": "video_9.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "OMG Ik stik bijna in m’n koffie, lol. "
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Ja doe dan",
+							"destination_timeline": 8
+						},
+						{
+							"id": 2,
+							"text": "NEE NEE. STOP HET WAS MAAR EEN GRAPJE, WTF!?",
+							"destination_timeline": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 8,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_11.mp4",
 					"loop": "false"
 				},
 				{
