@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timeline App</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto" rel="stylesheet">
+</head>
+<body>
+	<div id="timeline_app">
+		Timeline loaded from: {{json_path}}<br><br>
+		Legend:
+		<div id="legend">
+			<div class="present_choice">present_choice</div>
+			<div class="go_to_timeline">go_to_timeline</div>
+			<div class="set_video">set_video</div>
+			<div class="wait">wait</div>
+		</div>
+
+		<div id="timeline_container">
+			<div class="timeline_element" v-for="timeline_element in timeline">
+				id: {{timeline_element.id}}<br>
+				<div v-for="event in timeline_element.events" v-bind:class="event.type">
+					
+					<div v-if="event.type == 'present_choice'">
+						<a v-on:mouseover="info = event">
+						<div v-for="choice in event.choice">
+							to: {{choice.destination_timeline}}
+						</div></a>
+						
+					</div>
+					<div v-else-if="event.type == 'go_to_timeline'">
+						to: {{event.destination_timeline}}
+						
+					</div>
+					<div v-else-if="event.type == 'set_video'">
+						{{event.video}}
+					</div>
+					<div v-else-if="event.type == 'post_comment'">
+						<a v-on:mouseover="info = event">
+							comment: {{event.comment.commenter_id}}
+						</a>
+
+					</div>
+					<div v-else>
+						{{event.type}}
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div id="info">
+			<div v-if="info.type == 'present_choice'">
+				<div v-for="choice in info.choice">
+				{{choice.text}}<br>
+				<em>To:		{{choice.destination_timeline}}</em>
+				<br><br>
+				</div>
+			</div>
+			<div v-else-if="info.type == 'post_comment'">
+
+				{{info.comment.text}}<br>
+				<em>{{commenters.find(obj => {return obj.id === info.comment.commenter_id}).name}}</em>
+			</div>
+			
+		</div>
+		
+
+	</div>
+	<script src="timeline_app.js"></script>
+</body>
+</html>

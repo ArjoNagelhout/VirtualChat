@@ -634,6 +634,23 @@
 			]
 		},
 		{
+			"id": 1201,
+			"events": [
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "Wat the fuck is jou probleem!?"
+					}
+				},
+				{
+					"type": "go_to_timeline",
+					"destination_timeline": 13
+				}
+			]
+		},
+		{
 			"id": 13,
 			"events": [
 				{

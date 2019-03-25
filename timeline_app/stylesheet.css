@@ -1,0 +1,88 @@
+html {
+	font-family: 'Roboto', sans-serif;
+	background-color:gray;
+	
+}
+
+em {
+	color:white;
+}
+
+#timeline_container {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.timeline_element {
+	background-color:white;
+	margin:10px;
+	padding:10px;
+}
+
+#info {
+	font-size:2em;
+}
+
+#legend {
+	display:flex;
+}
+
+#legend div {
+	margin:10px;
+}
+
+a {
+	width:100%;
+}
+
+.wait {
+	background-color:gainsboro;
+}
+
+.present_choice {
+	background-color:red;
+}
+
+.go_to_timeline {
+	background-color:orange;
+}
+
+.set_video {
+	background-color:lime;
+}
+
+.post_comment:hover {
+	background-color:black;
+	color:white;
+}
+/*
+case "wait":
+
+case "go_to_timeline":
+
+
+case "set_video":
+				
+case "set_background_comment_frequency":
+				
+
+case "set_background_comments":
+				
+
+case "post_comment":
+				
+
+case "present_choice":
+				
+				case "set_positivity":
+				this.positivity = event.value;
+				break;
+
+				case "set_viewcount":
+				this.viewcount.value = event.value;
+				this.viewcount.fluctuation = event.fluctuation;
+				break;
+
+				case "turn_camera":
+				this.turnt_camera = true;
+				break;*/
