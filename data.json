@@ -344,14 +344,56 @@
 						{
 							"id": 1,
 							"text": "Laat de bitch maar kletsen over dobbelstenen. Er luistert toch niemand.",
-							"destination_timeline": 5
+							"destination_timeline": 5001
 						},
 						{
 							"id": 2,
 							"text": "Haha man jij bent echt grappig.",
-							"destination_timeline": 5
+							"destination_timeline": 5002
 						}
 					]
+				}
+			]
+		},
+		{
+			"id": 5001,
+			"events": [
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "haha Hey! @StellaSteller Steek die dobbelsteen maar in je reet! XD"
+					}
+				},
+				{
+					"type": "go_to_timeline",
+					"destination_timeline": 5
+				}
+			]
+		},
+		{
+			"id": 5002,
+			"events": [
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Aaah, kom op man :’("
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Hey @StellaStaller Wees eens een schat en gooi der een tiet uit? :D"
+					}
+				},
+				{
+					"type": "go_to_timeline",
+					"destination_timeline": 5
 				}
 			]
 		},
@@ -363,14 +405,6 @@
 					"duration": 2000,
 					"video": "video_5.mp4",
 					"loop": "false"
-				},
-				{
-					"type": "post_comment",
-					"duration": 2000,
-					"comment": {
-						"commenter_id": 1,
-						"text": "haha Hey! @StellaSteller Steek die dobbelsteen maar in je reet! XD"
-					}
 				},
 				{
 					"type": "present_choice",
@@ -492,6 +526,14 @@
 						"commenter_id": 1,
 						"text": "WTF, crazy bitch!"
 					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "Ik ben hier weg"
+					}
 				}
 			]
 		},
@@ -508,8 +550,8 @@
 					"type": "post_comment",
 					"duration": 2000,
 					"comment": {
-						"commenter_id": 1, 
-						"text": "Hahaha Hell Yeah Broer!"
+						"commenter_id": 3, 
+						"text": "Eeew (>~<) Fucking NERD! "
 					}
 				},
 				{
@@ -517,23 +559,7 @@
 					"duration": 2000,
 					"comment": {
 						"commenter_id": 1, 
-						"text": "Man! Als ik eerder had geweten dat je in was for wat fun! Man deze stream hadden we al lang over kunnen nemen XD"
-					}
-				},
-				{
-					"type": "post_comment",
-					"duration": 2000,
-					"comment": {
-						"commenter_id": 5, 
-						"text": "Hoor ik hier sprake van een kleine rebellie?"
-					}
-				},
-				{
-					"type": "post_comment",
-					"duration": 2000,
-					"comment": {
-						"commenter_id": 6, 
-						"text": "( ͡° ͜ʖ ͡°) ??"
+						"text": "Waarom zuig je der niet als je het zo leuk vind dan?"
 					}
 				},
 				{
@@ -570,7 +596,7 @@
 						{
 							"id": 1,
 							"text": "Bye bitch!  ¯\\_(ツ)_/¯ ",
-							"destination_timeline": 5
+							"destination_timeline": 5002
 						},
 						{
 							"id": 2,
