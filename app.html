@@ -65,7 +65,7 @@
 					<div class="comment" v-for="comment in comments">
 
 						<span class="comment_pictures" v-for="picture in comment.pictures">
-							<img v-bind:src="pictures_path+picture"/>
+							<img style="vertical-align:middle;" v-bind:src="pictures_path+picture"/>
 						</span>
 						<span class="comment_name" v-bind:style="{'color': comment.color}">{{comment.name}}</span>: {{comment.text}}
 					</div>

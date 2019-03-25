@@ -27,10 +27,10 @@ var app = new Vue({
 				timeline: [],
 				current_timeline_id: 0,
 				counter: 0,
-				turnt_camera: true,
+				turnt_camera: false,
 				viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
 
-				debug:false
+				debug:true
 			},
 			created: function() { 
 				// Load data from json file

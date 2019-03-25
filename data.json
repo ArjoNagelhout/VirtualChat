@@ -169,12 +169,6 @@
 					}
 				},
 				{
-					"type": "set_video",
-					"duration": 2000,
-					"video": "video_3.mp4",
-					"loop": "false"
-				},
-				{
 					"type": "go_to_timeline",
 					"duration": 0,
 					"destination_timeline": 2
@@ -195,12 +189,6 @@
 						"commenter_id": 2, 
 						"text": "Heyhey!"
 					}
-				},
-				{
-					"type": "set_video",
-					"duration": 2000,
-					"video": "video_2.mp4",
-					"loop": "false"
 				},
 				{
 					"type": "go_to_timeline",
@@ -255,7 +243,7 @@
 						{
 							"id": 2,
 							"text": "Ik vind het eigenlijk wel cool",
-							"destination_timeline": 1
+							"destination_timeline": 10
 						}
 					]
 				}
@@ -265,8 +253,10 @@
 			"id": 3,
 			"events": [
 				{
-					"type": "wait",
-					"duration": 2000
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_3.mp4",
+					"loop": "false"
 				},
 				{
 					"type": "post_comment",
@@ -311,7 +301,7 @@
 						{
 							"id": 2,
 							"text": "Ho ho ho vriend. Dat is niet wat ik bedoel.",
-							"destination_timeline": 1
+							"destination_timeline": 11
 						}
 					]
 				}
@@ -358,8 +348,8 @@
 						},
 						{
 							"id": 2,
-							"text": "Ik heb heb me bedacht broeders. Laten we het er maar bij laten.",
-							"destination_timeline": 1
+							"text": "Haha man jij bent echt grappig.",
+							"destination_timeline": 5
 						}
 					]
 				}
@@ -393,7 +383,7 @@
 						{
 							"id": 2,
 							"text": "@Pussyslayer69 Nee..gewoon niet. Doe ff normaal.",
-							"destination_timeline": 1
+							"destination_timeline": 13
 						}
 					]
 				}
@@ -426,8 +416,8 @@
 						},
 						{
 							"id": 2,
-							"text": "Ik denk dat het zo wel genoeg is geweest.",
-							"destination_timeline": 1
+							"text": "Hahaha Die stropdas kan veel strakker",
+							"destination_timeline": 7
 						}
 					]
 				}
@@ -461,7 +451,7 @@
 						{
 							"id": 2,
 							"text": "NEE NEE. STOP HET WAS MAAR EEN GRAPJE, WTF!?",
-							"destination_timeline": 1
+							"destination_timeline": 9
 						}
 					]
 				}
@@ -483,6 +473,211 @@
 						"commenter_id": 1,
 						"text": "OMG wat heb je gedaan!"
 					}
+				}
+			]
+		},
+		{
+			"id": 9,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_12.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "WTF, crazy bitch!"
+					}
+				}
+			]
+		},
+		{
+			"id": 10,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_2.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Hahaha Hell Yeah Broer!"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1, 
+						"text": "Man! Als ik eerder had geweten dat je in was for wat fun! Man deze stream hadden we al lang over kunnen nemen XD"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 5, 
+						"text": "Hoor ik hier sprake van een kleine rebellie?"
+					}
+				},
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 6, 
+						"text": "( ͡° ͜ʖ ͡°) ??"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Dit is zo saai :(",
+							"destination_timeline": 4
+						},
+						{
+							"id": 2,
+							"text": "Yahtzee is leuk",
+							"destination_timeline": 11
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 11,
+			"events": [
+				{
+					"type": "post_comment",
+					"duration": 2000,
+					"comment": {
+						"commenter_id": 1,
+						"text": "WTF, crazy bitch!"
+					}
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Bye bitch!  ¯\\_(ツ)_/¯ ",
+							"destination_timeline": 5
+						},
+						{
+							"id": 2,
+							"text": "Wow je hebt echt een gave collectie!",
+							"destination_timeline": 12
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 12,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_4.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Doe normaal @Passysalyer69 (-_-) Laat Stella met rust",
+							"destination_timeline": 13
+						},
+						{
+							"id": 2,
+							"text": "Ik vind het echt heel interessant",
+							"destination_timeline": 13
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 13,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_6.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Waarom val je niet iemand anders lastig? Het is niet grappig laat der met rust.",
+							"destination_timeline": 14
+						},
+						{
+							"id": 2,
+							"text": "@Pussyslayer waarom ga je niet weg. Lekker terug naar je moeder garage ofzo.",
+							"destination_timeline": 14
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 14,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_8.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "present_choice",
+					"choice": [
+						{
+							"id": 1,
+							"text": "Oké doei!",
+							"destination_timeline": 15
+						},
+						{
+							"id": 2,
+							"text": "Omg deze video was zo leuk ik hoop je weer eens te zien streamen.",
+							"destination_timeline": 16
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 15,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_10.mp4",
+					"loop": "false"
+				}
+			]
+		},
+		{
+			"id": 16,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 2000,
+					"video": "video_10_bonus.mp4",
+					"loop": "false"
 				}
 			]
 		}
