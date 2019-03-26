@@ -6,10 +6,10 @@
 	},
 	"start_choice": [
 		{
-			"id": 1,
-			"text": "Start het verhaal",
-			"destination_timeline": 1
-		}
+							"id": 1,
+							"text": "Ja doe dan",
+							"destination_timeline": 8
+						}
 	],
 	"start_video": "movie_2.mp4",
 	"commenters": [
@@ -129,13 +129,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
-					"video": "video_1.mp4",
+					"duration": 13000,
+					"video": "video_1_part1.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 6000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Sup BitchBabies >:)"
@@ -143,7 +143,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 6000,
 					"comment": {
 						"commenter_id": 2, 
 						"text": "Hallo allemaal! That’s going on here?"
@@ -151,7 +151,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 9000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Mhaaaahahaahaaaa!"
@@ -178,12 +178,14 @@
 			"id": 1001,
 			"events": [
 				{
-					"type": "wait",
-					"duration": 2000
+					"type": "set_video",
+					"duration": 4600,
+					"video": "video_1_part2.mp4",
+					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Fuck! XD"
@@ -200,12 +202,14 @@
 			"id": 1002,
 			"events": [
 				{
-					"type": "wait",
-					"duration": 2000
+					"type": "set_video",
+					"duration": 4600,
+					"video": "video_1_part2.mp4",
+					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 2, 
 						"text": "Heyhey!"
@@ -223,7 +227,7 @@
 			"events": [
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Fuuuuuuuuuuuuuuuck dit is SAAAAAAAAAAIII!"
@@ -231,7 +235,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 3, 
 						"text": "Like OMG dit is echt ZO onprofessioneel like wat doe je met deze stream?"
@@ -239,7 +243,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 3, 
 						"text": "Sommige mensen vinden zichzelf echt heel wat LOL"
@@ -247,7 +251,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4600,
 					"comment": {
 						"commenter_id": 4, 
 						"text": "Haha ja :)"
@@ -275,13 +279,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
-					"video": "video_3.mp4",
+					"duration": 10000,
+					"video": "video_3_part1.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 380000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Hahaha Hell Yeah Broer!"
@@ -289,7 +293,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 10000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Man! Als ik eerder had geweten dat je in was for wat fun! Man deze stream hadden we al lang over kunnen nemen XD"
@@ -297,7 +301,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 20000,
 					"comment": {
 						"commenter_id": 5, 
 						"text": "Hoor ik hier sprake van een kleine rebellie?"
@@ -305,7 +309,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 10000,
 					"comment": {
 						"commenter_id": 6, 
 						"text": "( ͡° ͜ʖ ͡°) ??"
@@ -322,9 +326,24 @@
 						{
 							"id": 2,
 							"text": "Ho ho ho vriend. Dat is niet wat ik bedoel.",
-							"destination_timeline": 11
+							"destination_timeline": 3001
 						}
 					]
+				}
+			]
+		},
+		{
+			"id": 3001,
+			"events": [
+				{
+					"type": "set_video",
+					"duration": 0,
+					"video": "video_3_part2.mp4",
+					"loop": "false"
+				},
+				{
+					"type": "go_to_timeline",
+					"destination_timeline": 11
 				}
 			]
 		},
@@ -332,12 +351,14 @@
 			"id": 4,
 			"events": [
 				{
-					"type": "wait",
-					"duration": 2000
+					"type": "set_video",
+					"duration": 10000,
+					"video": "video_3_part2.mp4",
+					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 20000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Fock Yeah XD"
@@ -345,7 +366,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 10000,
 					"comment": {
 						"commenter_id": 5,
 						"text": "Mooi kapen de boel! Deze stream is van ons!"
@@ -353,7 +374,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 28000,
 					"comment": {
 						"commenter_id": 6,
 						"text": "✊✊✊✊✊✊!"
@@ -380,8 +401,14 @@
 			"id": 4001,
 			"events": [
 				{
+					"type": "set_video",
+					"duration": 430000,
+					"video": "video_5.mp4",
+					"loop": "false"
+				},
+				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 20000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "haha Hey! @StellaSteller Steek die dobbelsteen maar in je reet! XD"
@@ -397,8 +424,14 @@
 			"id": 4002,
 			"events": [
 				{
+					"type": "set_video",
+					"duration": 50000,
+					"video": "video_5.mp4",
+					"loop": "false"
+				},
+				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 425000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Aaah, kom op man :’("
@@ -406,7 +439,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 20000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Hey @StellaStaller Wees eens een schat en gooi der een tiet uit? :D"
@@ -421,12 +454,6 @@
 		{
 			"id": 5,
 			"events": [
-				{
-					"type": "set_video",
-					"duration": 2000,
-					"video": "video_5.mp4",
-					"loop": "false"
-				},
 				{
 					"type": "present_choice",
 					"choice": [
@@ -466,13 +493,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
+					"duration": 5000,
 					"video": "video_7.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 158000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Eeey! Laat het maar aan mij over. ;)"
@@ -489,7 +516,7 @@
 						{
 							"id": 2,
 							"text": "Hahaha Die stropdas kan veel strakker",
-							"destination_timeline": 7
+							"destination_timeline": 9
 						}
 					]
 				}
@@ -500,13 +527,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
+					"duration": 5000,
 					"video": "video_9.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 19000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "OMG Ik stik bijna in m’n koffie, lol. "
@@ -534,13 +561,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
+					"duration": 19000,
 					"video": "video_11.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 0,
 					"comment": {
 						"commenter_id": 1,
 						"text": "OMG wat heb je gedaan!"
@@ -553,13 +580,13 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 2000,
+					"duration": 6000,
 					"video": "video_12.mp4",
 					"loop": "false"
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 4000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "WTF, crazy bitch!"
@@ -567,7 +594,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 2000,
+					"duration": 0,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Ik ben hier weg"

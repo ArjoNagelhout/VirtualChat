@@ -12,7 +12,7 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		videos_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/videos/",
-		pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualChat/pictures/",
+		pictures_path: "/Users/arjonagelhout/Documents/HKU G&I/Blok 3/Project Context/Website/VirtualStreamingSite/pictures/",
 		commenters: [],
 		positivity: 0,
 		background_comment_frequency: {min: 1000, max: 1000},
@@ -56,7 +56,7 @@ var app = new Vue({
 
 		this.add_background_comment();
 		this.update_viewcount();
-		this.create_camera();
+		//this.create_camera();
 
 	},
 	methods: {
