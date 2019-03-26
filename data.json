@@ -1,8 +1,8 @@
 {
 	"information": {
-		"title": "Dobbelstenen review! #129",
+		"title": "Mijn DOBBELSTENEN collectie!!🎲🎲🎲🎲🎲",
 		"streamer": "StellaStellar42",
-		"description": "Dit is mijn geweldige stream over een ding. "
+		"description": "Hallo allemaal!! Dit is mijn eerste stream. Ik hoop dat jullie een beetje houden van dobbelstenen?! Want daar krijgen jullie een hele load van. En als we toch bezig zijn. Ga eens naar buiten, drink wat water aai een hond, je weet wel. Geniet van het goede leven allemaal."
 	},
 	"start_choice": [
 		{
@@ -127,6 +127,11 @@
 		{
 			"id": 1,
 			"events": [
+				{
+					"type": "set_view_count",
+					"value": 10,
+					"fluctuation": 0
+				},
 				{
 					"type": "set_video",
 					"duration": 13000,

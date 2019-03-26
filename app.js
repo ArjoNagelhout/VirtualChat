@@ -28,7 +28,7 @@ var app = new Vue({
 		current_timeline_id: 0,
 		counter: 0,
 		turnt_camera: false,
-		viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
+		viewcount: {value: 10, real: 10, fluctuation: 0, update_delay: 10000},
 
 		debug:false
 	},
