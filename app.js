@@ -57,6 +57,7 @@ var app = new Vue({
 		this.add_background_comment();
 		this.update_viewcount();
 		//this.create_camera();
+		if (this.debug) {console.log("current_timeline: "+this.current_timeline_id)};
 
 	},
 	methods: {
@@ -84,6 +85,9 @@ var app = new Vue({
 			var current_timeline = this.timeline.find(obj => {return obj.id === this.current_timeline_id});
 			var event = current_timeline.events[event_id];
 
+			if (this.debug) {console.log(event.type)};
+
+
 			// Execute different types of events
 			switch (event.type) {
 
@@ -92,11 +96,12 @@ var app = new Vue({
 
 				case "go_to_timeline":
 				this.current_timeline_id = event.destination_timeline;
+				if (this.debug) {console.log("current_timeline: "+this.current_timeline_id)};
 				this.execute_event(0);
 				break;
 
 				case "set_video":
-				this.current_video = event.video;
+				if (this.debug) {console.log(this.current_video = event.video)};
 				this.change_video_loop(event.loop);
 				video_element.load();
 				break;
@@ -168,7 +173,7 @@ var app = new Vue({
 			this.$nextTick(() => {
 					chat.scrollTop = chat.scrollHeight;
 				});
-
+			console.log("current_timeline: "+this.current_timeline_id);
 			this.execute_event(0);
 		},
 		add_background_comment: function() {
