@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto" rel="stylesheet">
 </head>
 <body>
+
 	<div id="timeline_app">
 		Timeline loaded from: {{json_path}}<br><br>
 		Legend:
@@ -19,6 +20,7 @@
 
 		<div id="timeline_container">
 			<div class="timeline_element" v-for="timeline_element in timeline">
+				<button onclick="this.parentNode.classList.add('clicked')">V</button>
 				id: {{timeline_element.id}}<br>
 				<div v-for="event in timeline_element.events" v-bind:class="event.type">
 					
@@ -34,7 +36,7 @@
 						
 					</div>
 					<div v-else-if="event.type == 'set_video'">
-						{{event.video}}
+						<a v-on:mouseover="info = event">{{event.video}}</a>
 					</div>
 					<div v-else-if="event.type == 'post_comment'">
 						<a v-on:mouseover="info = event">
@@ -62,7 +64,8 @@
 
 				{{info.comment.text}}<br>
 				<em>{{commenters.find(obj => {return obj.id === info.comment.commenter_id}).name}}</em>
-			</div>
+			</div><br>
+			Length: {{info.duration}}s
 			
 		</div>
 		

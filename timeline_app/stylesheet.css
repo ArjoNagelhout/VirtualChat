@@ -55,6 +55,11 @@ a {
 	background-color:black;
 	color:white;
 }
+
+.clicked {
+	background-color:cyan;
+}
+
 /*
 case "wait":
 
