@@ -30,7 +30,7 @@ var app = new Vue({
 		turnt_camera: false,
 		viewcount: {value: 0, real: 0, fluctuation: 0, update_delay: 10000},
 
-		debug:true
+		debug:false
 	},
 	created: function() { 
 		// Load data from json file

@@ -6,10 +6,10 @@
 	},
 	"start_choice": [
 		{
-							"id": 1,
-							"text": "Ja doe dan",
-							"destination_timeline": 8
-						}
+			"id": 1,
+			"text": "Start het verhaal",
+			"destination_timeline": 1
+		}
 	],
 	"start_video": "movie_2.mp4",
 	"commenters": [
