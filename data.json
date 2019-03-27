@@ -94,33 +94,39 @@
 	"background_comments": [
 		{
 			"id": 1,
-			"min_positivity": 3,
-			"max_positivity": 8,
-			"text": "OMG XD"
-		},
-		{
-			"id": 2,
 			"min_positivity": -10,
 			"max_positivity": 10,
-			"text": "Kun je een shoutout doen?"
+			"text": ":D"
 		},
 		{
-			"id": 3,
+			"id": 1,
 			"min_positivity": -10,
 			"max_positivity": 10,
-			"text": "If you love her, leave a like!"
+			"text": "Ik hou van dobbelstenen!"
 		},
 		{
-			"id": 4,
+			"id": 1,
 			"min_positivity": -10,
-			"max_positivity": -5,
-			"text": "Fuck you!"
+			"max_positivity": 10,
+			"text": ":D"
 		},
 		{
-			"id": 5,
-			"min_positivity": 0,
-			"max_positivity": 3,
-			"text": "Test"
+			"id": 1,
+			"min_positivity": -10,
+			"max_positivity": 10,
+			"text": ":D"
+		},
+		{
+			"id": 1,
+			"min_positivity": -10,
+			"max_positivity": 10,
+			"text": ":D"
+		},
+		{
+			"id": 1,
+			"min_positivity": -10,
+			"max_positivity": 10,
+			"text": ":D"
 		}
 	],
 	"timeline": [
@@ -290,7 +296,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 380000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Hahaha Hell Yeah Broer!"
@@ -416,7 +422,7 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 430000,
+					"duration": 60000,
 					"video": "video_5.mp4",
 					"loop": "false"
 				},
@@ -445,7 +451,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 425000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Aaah, kom op man :’("
@@ -496,7 +502,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 236000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Wat the fuck is jou probleem!?"
@@ -641,7 +647,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 381000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1, 
 						"text": "Waarom zuig je der niet als je het zo leuk vind dan?"
@@ -765,7 +771,7 @@
 			"events": [
 				{
 					"type": "set_video",
-					"duration": 176000,
+					"duration": 60000,
 					"video": "video_4.mp4",
 					"loop": "false"
 				},
@@ -805,7 +811,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 236000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Wat is jou probleem? XD."
@@ -828,7 +834,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 236000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "HA! NERD!"
@@ -879,7 +885,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 161000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Dit is ZO SAAAI! De mazzel..."
@@ -902,7 +908,7 @@
 				},
 				{
 					"type": "post_comment",
-					"duration": 161000,
+					"duration": 60000,
 					"comment": {
 						"commenter_id": 1,
 						"text": "Touché mijn vriend. XD Maar ik ga liever eerst ff langs bij jou moeder ;) Zegt Linda maar dat ik zin heb in vanavond."
