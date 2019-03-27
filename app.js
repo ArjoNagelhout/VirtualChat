@@ -28,6 +28,9 @@ var app = new Vue({
 		current_timeline_id: 0,
 		counter: 0,
 		turnt_camera: false,
+		has_logged_in: false,
+		player_name: "",
+
 		viewcount: {value: 10, real: 10, fluctuation: 0, update_delay: 10000},
 
 		debug:false
@@ -61,6 +64,11 @@ var app = new Vue({
 
 	},
 	methods: {
+		login: function() {
+			this.has_logged_in = true; 
+			this.commenters[0].name = 'Speler'+this.player_name;
+			this.player_choose(1);
+		},
 		create_camera: function() {
 			if (navigator.mediaDevices.getUserMedia) {
 				
@@ -101,7 +109,8 @@ var app = new Vue({
 				break;
 
 				case "set_video":
-				if (this.debug) {console.log(this.current_video = event.video)};
+				this.current_video = event.video
+				if (this.debug) {console.log(this.current_video)};
 				this.change_video_loop(event.loop);
 				video_element.load();
 				break;
@@ -227,12 +236,14 @@ var app = new Vue({
 
 			var commenter = this.commenters.find(obj => {return obj.id === commenter_id});
 
-			this.comments.push({
-				name: commenter.name, 
-				color: commenter.color, 
-				pictures: commenter.pictures,
-				text: text
-			});
+			if (text != "") {
+				this.comments.push({
+					name: commenter.name, 
+					color: commenter.color, 
+					pictures: commenter.pictures,
+					text: text
+				});
+			}
 
 			if (chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight)) {
 				this.$nextTick(() => {

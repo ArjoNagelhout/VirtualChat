@@ -11,80 +11,101 @@
 
 	<div id="app">
 
-		<div id="top_bar">
-			<img src="logo.png">
-		</div>
-		<div id="content_area">
+		<div id="login_screen" v-if="has_logged_in == false">
+			<div id="login_container">
+				<img src="logo_center.png">
+				<h1 id="login_title">Log in je account om deze stream te kunnen bekijken.</h1>
+				<div id="login_container_white">
+					
+
+					<h3>Gebruikersnaam</h3>
+					<input v-model="player_name"/>
+					<h3>Wachtwoord</h3>
+					<input type="password"/>
+					<button id="login_button" v-on:click="login()">Login</button>
+				</div>
+			</div>
 			
-
-			<div id="left_bar">
-				<img src="left_bar.png">
+		</div>
+		<div id="app_container">
+			<div id="top_bar">
+				<img src="logo.png">
 			</div>
-
-
-			<div id="video_area">
-				<video v-show="turnt_camera" id="video_stream_element" autoplay></video>
-				<video v-show="turnt_camera==false" id="video_element" autoplay>
-					<source v-bind:src="videos_path+current_video" type="video/mp4">
-				</video>
-				<div id="information_area">
-					<div id="top_information_container">
-						<div id="information_container">
-							<h1>{{information.title}}</h1>
-							<h2 id="information_streamer">door <span>{{information.streamer}}</span></h2>
-							<h2 id="information_viewcount">{{viewcount.real}} kijkers</h2>
-						</div>
-					
-						<div id="button_container">
-							<div class="button"><p>Subscribe</p></div>
-							<div class="button"><p>Like</p></div>
-						</div>
-					</div>
-
-					<p v-if="debug">
-						positivity: {{positivity}}<br>
-						current_timeline_id: {{current_timeline_id}}<br>
-						current_video: {{current_video}}<br>
-						background_comment_frequency: {min: {{background_comment_frequency.min}}, max: {{background_comment_frequency.max}}}<br>
-						background_comments_bool: {{background_comments_bool}}
-					</p>
-					<p v-else>
-						{{information.description}}
-					</p>
-				</div>
-			</div>
-
-			<div id="chat_area">
+			<div id="content_area">
 				
-				<div id="chat_top_bar">
-					<h1>Live Chat</h1>
+
+				<div id="left_bar">
+					<img src="left_bar.png">
 				</div>
 
-					
-				<div id="chat">
-					<div id="fix"></div>
-					<div class="comment" v-for="comment in comments">
 
-						<span class="comment_pictures" v-for="picture in comment.pictures">
-							<img style="vertical-align:middle;" v-bind:src="pictures_path+picture"/>
-						</span>
-						<span class="comment_name" v-bind:style="{'color': comment.color}">{{comment.name}}</span>: {{comment.text}}
+				<div id="video_area">
+					<video v-show="turnt_camera" id="video_stream_element" autoplay></video>
+					<video v-show="turnt_camera==false" id="video_element" autoplay>
+						<source v-bind:src="videos_path+current_video" type="video/mp4">
+					</video>
+					<div id="information_area">
+						<div id="top_information_container">
+							<div id="information_container">
+								<h1>{{information.title}}</h1>
+								<h2 id="information_streamer">door <span>{{information.streamer}}</span></h2>
+								<h2 id="information_viewcount">{{viewcount.real}} kijkers</h2>
+							</div>
+						
+							<div id="button_container">
+								<div class="button"><p>Subscribe</p></div>
+								<div class="button"><p>Like</p></div>
+							</div>
+						</div>
+
+						<p v-if="debug">
+							positivity: {{positivity}}<br>
+							current_timeline_id: {{current_timeline_id}}<br>
+							current_video: {{current_video}}<br>
+							background_comment_frequency: {min: {{background_comment_frequency.min}}, max: {{background_comment_frequency.max}}}<br>
+							background_comments_bool: {{background_comments_bool}}
+						</p>
+						<p v-else>
+							{{information.description}}
+						</p>
 					</div>
 				</div>
 
+				<div id="chat_area">
+					
+					<div id="chat_top_bar">
+						<h1>Live Chat</h1>
+					</div>
 
-				<div id="player_choice">
-					<div id="choices_container" v-if="choose">
-						<h2 id="choice_title">Maak een keuze:</h2>
-						<div class="choice_container" v-for="choice in current_choice">
-							<button class="choice_button" v-on:click="player_choose(choice.id)">
-								{{choice.text}}
-							</button>
+						
+					<div id="chat">
+						<div id="fix"></div>
+						<div class="comment" v-for="comment in comments">
+
+							<span class="comment_pictures" v-for="picture in comment.pictures">
+								<img style="vertical-align:middle;" v-bind:src="pictures_path+picture"/>
+							</span>
+							<span class="comment_name" v-bind:style="{'color': comment.color}">{{comment.name}}</span>: {{comment.text}}
 						</div>
 					</div>
+
+
+					<div id="player_choice">
+						<div id="choices_container" v-if="choose">
+							<h2 class="choice_title">Maak een keuze:</h2>
+							<div class="choice_container" v-for="choice in current_choice">
+								<button class="choice_button" v-on:click="player_choose(choice.id)">
+									{{choice.text}}
+								</button>
+							</div>
+						</div>
+						<div v-else>
+							<h2 class="choice_title">Wacht op een keuze</h2>
+						</div>
+					</div>
+
+
 				</div>
-
-
 			</div>
 		</div>
 	</div>

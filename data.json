@@ -7,7 +7,7 @@
 	"start_choice": [
 		{
 			"id": 1,
-			"text": "Start het verhaal",
+			"text": "",
 			"destination_timeline": 1
 		}
 	],
