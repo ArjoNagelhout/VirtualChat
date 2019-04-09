@@ -1,5 +1,5 @@
 # VirtualStreamingSite
-Prototype for Project Context at HKU
+Prototype for Project Context at HKU, made with Vue.js
 
 ![Login screen screenshot](https://github.com/ArjoNagelhout/VirtualStreamingSite/raw/master/screenshots/screenshot_1.png)
 
